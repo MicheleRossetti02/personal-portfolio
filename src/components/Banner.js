@@ -5,7 +5,7 @@ import headerImg from "../assets/img/header-img.svg";
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Web developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["Web Developer"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
@@ -43,7 +43,7 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{`Hi I'm webdecoded `} <br></br>
+                        <h1>{`Hi I'm Michele Rossetti `} <br></br>
                             <span className="wrap">{text}</span>
                         </h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam placeat aliquid, blanditiis iure quos tempore est illum. Magnam, ratione alias.   </p>
