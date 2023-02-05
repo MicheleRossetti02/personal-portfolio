@@ -5,6 +5,8 @@ import projImg2 from '../assets/img/project-img2.png';
 import projImg3 from '../assets/img/project-img3.png';
 import colorSharp2 from '../assets/img/color-sharp2.png';
 import { ProjectCard } from "./ProjectCard";
+import TrackVisibility from "react-on-screen";
+import 'animate.css';
 
 
 export const Projects = () => {
@@ -41,13 +43,19 @@ export const Projects = () => {
         },
     ]
     return (
-        <section className="project" id="project">
+        <section className="project" id="projects">
             <Container>
                 <Row>
                     <Col>
-                        <h2> Projects </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam placeat aliquid, blanditiis iure quos tempore est illum. Magnam, ratione alias.   </p>
-                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                        <TrackVisibility>
+                            {({ isVisible }) =>
+                                < div className={isVisible ? "animate__animated animate__slideinUp" : ""}>
+                                    <h2> Projects </h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam placeat aliquid, blanditiis iure quos tempore est illum. Magnam, ratione alias.   </p>
+                                </div>}
+                        </TrackVisibility>
+
+                        <TabContainer id="projects-tabs" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
                                     <Nav.Link eventKey="first">Tab one</Nav.Link>
@@ -76,7 +84,7 @@ export const Projects = () => {
                                 <Tab.Pane eventKey="second"> Lorem Ipsum</Tab.Pane>
                                 <Tab.Pane eventKey="third"> Lorem Ipsum</Tab.Pane>
                             </Tab.Content>
-                        </Tab.Container>
+                        </TabContainer>
                     </Col>
                 </Row>
             </Container>
